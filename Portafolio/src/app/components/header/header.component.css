@@ -1,3 +1,8 @@
 div {
     background-color: #a1b5cb;
 }
+
+app-social-medias {
+    float: right;
+    margin-top: 25px;
+}
