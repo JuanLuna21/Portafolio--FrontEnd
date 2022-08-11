@@ -23,7 +23,6 @@ div {
     top: 110%;
 }
 
-
 @media(max-width: 768px) {
     #img-profile {
         position: absolute;

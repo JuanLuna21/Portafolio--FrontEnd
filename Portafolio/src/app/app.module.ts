@@ -8,6 +8,8 @@ import { LogoComponent } from './components/logo/logo.component';
 import { SocialMediasComponent } from './components/social-medias/social-medias.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { AboutComponent } from './components/about/about.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AboutComponent } from './components/about/about.component';
     LogoComponent,
     SocialMediasComponent,
     BackgroundComponent,
-    AboutComponent
+    AboutComponent,
+    ExperienceComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
