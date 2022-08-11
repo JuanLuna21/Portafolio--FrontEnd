@@ -1,0 +1,50 @@
+.row {
+    padding: 20px;
+}
+
+
+div {
+    background-color: #a1b5cb;
+    text-align: center;
+}
+
+.nameprofile {
+    font-weight: bold;
+    text-align: end;
+    margin-top: 40%;
+    margin-left: 10px;
+}
+
+#img-profile {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 6px 6px 6px grey;
+    width: 17%;
+    top: 110%;
+}
+
+
+@media(max-width: 768px) {
+    #img-profile {
+        position: absolute;
+        border-radius: 100%;
+        box-shadow: 6px 6px 6px grey;
+        width: 17%;
+        top: 60%;
+    }
+}
+
+@media(max-width: 576px) {
+
+    #img-profile {
+        position: absolute;
+        width: 15%;
+        border: 100%;
+        box-shadow: 6px 6px 6px grey;
+        margin-left: 10px;
+        top: 40%;
+        left: 27%;
+        width: 30%;
+
+    }
+}
