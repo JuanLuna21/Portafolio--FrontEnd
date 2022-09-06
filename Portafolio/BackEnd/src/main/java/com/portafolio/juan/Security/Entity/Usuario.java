@@ -1,4 +1,3 @@
-
 package com.portafolio.juan.Security.Entity;
 
 import java.util.HashSet;
@@ -22,19 +21,19 @@ public class Usuario {
     @NotNull
     private String nombre;
     @NotNull
-    @Column(unique = true)
+    @Column(unique =true)
     private String nombreUsuario;
     @NotNull
     private String email;
     @NotNull
     private String password;
     @NotNull
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"),
-    inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @ManyToMany(fetch= FetchType.EAGER)
+    @JoinTable (name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
 
-public Usuario() {
+    public Usuario() {
     }
 
     public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password) {

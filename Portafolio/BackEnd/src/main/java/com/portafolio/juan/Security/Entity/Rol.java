@@ -1,3 +1,4 @@
+
 package com.portafolio.juan.Security.Entity;
 
 import com.portafolio.juan.Security.Enums.RolNombre;
@@ -21,10 +22,6 @@ public class Rol {
     public Rol() {
     }
 
-    public Rol(@NotNull RolNombre rolNombre) {
-        this.rolNombre = rolNombre;
-    }
-
     public int getId() {
         return id;
     }
@@ -38,6 +35,10 @@ public class Rol {
     }
 
     public void setRolNombre(RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
+    }
+
+    public Rol(@NotNull RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
 }

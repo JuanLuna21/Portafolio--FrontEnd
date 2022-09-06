@@ -1,7 +1,7 @@
 
 package com.portafolio.juan.Security;
 
-import com.portafolio.juan.Security.Service.UserDetailsServiceImpl;
+import com.portafolio.juan.Security.Service.UserDetailsServiceImp;
 import com.portafolio.juan.Security.jwt.JwtEntryPoint;
 import com.portafolio.juan.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,24 +21,24 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class MainSecurity extends WebSecurityConfigurerAdapter {
-
+public class MainSecurity extends WebSecurityConfigurerAdapter{
+    
     @Autowired
-    UserDetailsServiceImpl userDetailsService;
-
+    UserDetailsServiceImp userDetailsService;
+    
     @Autowired
     JwtEntryPoint jwtEntryPoint;
-
+    
     @Bean
     public JwtTokenFilter jwtTokenFilter(){
-        return new JwtTokenFilter();
-    }
-
+            return new JwtTokenFilter();
+            }
+    
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
+    return new BCryptPasswordEncoder();
+            }
+    
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -57,14 +57,14 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
+        http.cors().and().csrf().disable() // SI estuvieramos usando cookies no es buena idea usar esto
                 .authorizeRequests()
-                .antMatchers("/auth/**").permitAll()
+                .antMatchers("**").permitAll()// TODO el mundo puede acceder sin problema en esta URI
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//POR cada PETICION se envia un token (NO USAMOS COOKIES)
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

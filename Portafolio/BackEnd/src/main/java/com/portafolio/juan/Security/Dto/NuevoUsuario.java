@@ -1,4 +1,4 @@
-package com.portafolio.juan.Security.Dto;
+package com.porta.portafolio.security.Dto;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +14,7 @@ public class NuevoUsuario {
     @Email
     private String email;
     @NotBlank
-    private String password;
+    private String password;    
     private Set<String> roles = new HashSet<>();
 
     public String getNombre() {
