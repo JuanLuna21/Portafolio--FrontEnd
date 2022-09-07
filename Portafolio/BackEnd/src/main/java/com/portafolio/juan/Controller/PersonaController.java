@@ -55,5 +55,5 @@ public class PersonaController {
     public Persona findPersona(@PathVariable("id")int id){
         return ipersonaService.findPersona(id);
     }
-    
+
 }

@@ -1,4 +1,3 @@
-
 package com.portafolio.juan.Security.Entity;
 
 import com.portafolio.juan.Security.Enums.RolNombre;
@@ -9,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+
+
 
 @Entity
 public class Rol {

@@ -11,6 +11,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 
+
 @Component
 public class JwtEntryPoint implements AuthenticationEntryPoint {
 

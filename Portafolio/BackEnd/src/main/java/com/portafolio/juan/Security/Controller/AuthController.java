@@ -1,9 +1,9 @@
 package com.portafolio.juan.Security.Controller;
 
-import com.portafolio.juan.Security.Dto.Mensaje;
-import com.porta.portafolio.security.Dto.NuevoUsuario;
 import com.portafolio.juan.Security.Dto.JwtDto;
 import com.portafolio.juan.Security.Dto.LoginUsuario;
+import com.portafolio.juan.Security.Dto.Mensaje;
+import com.portafolio.juan.Security.Dto.NuevoUsuario;
 import com.portafolio.juan.Security.Entity.Rol;
 import com.portafolio.juan.Security.Entity.Usuario;
 import com.portafolio.juan.Security.Enums.RolNombre;
@@ -12,7 +12,6 @@ import com.portafolio.juan.Security.Service.UsuarioService;
 import com.portafolio.juan.Security.jwt.JwtProvider;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +21,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,8 +33,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin
-public class AuthController {
 
+public class AuthController {
+    
+  
     @Autowired
     PasswordEncoder passwordEncoder;
 

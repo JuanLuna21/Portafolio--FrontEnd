@@ -57,14 +57,14 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable() // SI estuvieramos usando cookies no es buena idea usar esto
+        http.cors().and().csrf().disable() 
                 .authorizeRequests()
-                .antMatchers("**").permitAll()// TODO el mundo puede acceder sin problema en esta URI
+                .antMatchers("**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);//POR cada PETICION se envia un token (NO USAMOS COOKIES)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
