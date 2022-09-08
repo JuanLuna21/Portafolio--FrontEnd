@@ -1,16 +1,12 @@
 package com.portafolio.juan.Security.Dto;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
-
-
 
 public class LoginUsuario {
     
     @NotBlank
     private String nombreUsuario;
-    @Email
+    @NotBlank
     private String password;
 
     public String getNombreUsuario() {
