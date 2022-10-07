@@ -16,9 +16,7 @@ export class LoginComponent implements OnInit {
 
   islogged = false;
   islogginFail = false;
-  loginUsuario!: LoginUsuario;
-  nombreUsuario!: string;
-  password!: string;
+  loginUsuario: LoginUsuario = new LoginUsuario('', '');
   roles: string[] = [];
   errMsj!: string;
 
@@ -33,13 +31,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
+
     this.authService.login(this.loginUsuario).subscribe(data => { this.islogged = true; this.islogginFail = false; this.tokenService.setToken(data.token); this.tokenService.setUserName(data.nombreUsuario); this.tokenService.setAuthorities(data.authorities); this.roles = data.authorities; this.router.navigate(['']) }, err => {
       this.islogged = false;
       this.islogginFail = true;
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
     })
+
   }
 
 }
