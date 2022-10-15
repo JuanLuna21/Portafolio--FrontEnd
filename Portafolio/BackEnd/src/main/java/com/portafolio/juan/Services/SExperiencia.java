@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 @Transactional
-public class SExperiencia {
+public class SExperiencia{
     
     @Autowired
     RExperiencia rExperiencia;
@@ -24,9 +24,9 @@ public class SExperiencia {
         return rExperiencia.findById(id);
     }
     
-//    public  Optional<Experiencia> getByNombreE(String nombreE){
- //   return rExperiencia.findBy(nombreE);
-   // }
+    public  Optional<Experiencia> getByNombreE(String nombreE){
+    return rExperiencia.findByNombreE(nombreE);
+    }
     
     public void save(Experiencia expe){
         rExperiencia.save(expe);
@@ -41,9 +41,9 @@ public class SExperiencia {
         return rExperiencia.existsById(id);
     }
     
-  //  public boolean existByNombreE(String nombreE){
-  //      return rExperiencia.existBy(nombreE);
-  //  }
+   public boolean existsByNombreE(String nombreE){
+        return rExperiencia.existsByNombreE(nombreE);
+    }
     
     
 }

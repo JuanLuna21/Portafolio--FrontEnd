@@ -1,12 +1,28 @@
 <div class="row">
-    <h1>Experience in work</h1>
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
-            Cras justo odio
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+    <h1>Experiencia Laboral.</h1>
+    <div class="colg lg 2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
+    </div>
+    <div class="col-lg-11">
+        <table class="table table-sm table-dark">
+            <tbody>
+                <tr *ngForm="let Experiencia of expe">
+                    <td scope="col">{{Experiencia.nombreE}}</td>
+                    <td scope="col">{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged" scope="col"><button class="btn btn-light"
+                            routerLink="/editexp/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-fill"></i>Editar
+                        </button>
+                    </td>
+
+                    <td ngIf="isLogged" scope="col"> <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-pencil-fill"></i>Borrar </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 </div>
