@@ -9,8 +9,7 @@
         <div *ngFor="let Experiencia of expe">
             <p>{{Experiencia.nombreE}}</p>
             <p>{{Experiencia.descripcionE}}</p>
-            <button *ngIf=" isLogged" routerLink="/editexp/{{Experiencia.id}}">Editar</button>
-            <button ngIf="isLogged" (click)="delete(Experiencia.id)">Borrar</button>
+            <button *ngIf="isAdmin" routerLink="/editexp/{{Experiencia.id}}">Editar</button>
+            <button *ngIf="isAdmin" (click)="delete(Experiencia.id)">Borrar</button>
         </div>
     </div>
-</div>

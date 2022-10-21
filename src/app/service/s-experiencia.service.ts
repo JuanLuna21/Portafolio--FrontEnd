@@ -10,26 +10,26 @@ import { Observable } from 'rxjs';
 export class SExperienciaService {
   expURL = 'https://portafoliojuanluna.herokuapp.com/explab/'
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]> {
-    return this.HttpClient.get<Experiencia[]>(this.expURL + 'lista');
+    return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');
   }
 
   public details(id: number): Observable<Experiencia> {
-    return this.HttpClient.get<Experiencia>(this.expURL + `details/${id}`)
+    return this.httpClient.get<Experiencia>(this.expURL + `details/${id}`)
   }
 
   public save(experiencia: Experiencia): Observable<any> {
-    return this.HttpClient.post<any>(this.expURL + 'create', experiencia);
+    return this.httpClient.post<any>(this.expURL + 'create', experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any> {
-    return this.HttpClient.put<any>(this.expURL + `update/${id}`, experiencia);
+    return this.httpClient.put<any>(this.expURL + `update/${id}`, experiencia);
   }
 
   public delete(id: number): Observable<any> {
-    return this.HttpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
   }
 
 }

@@ -1,27 +1,28 @@
 <div class="row">
-    <h1>Projects</h1>
 
-    <div class="container">
-
-        <div class="col-sm-12 col-md-7 col-lg-7">
-            <h1>Page web</h1>
-            <p>
-                Primer proyecto
-            </p>
-        </div>
-        <div>
-            <img class="col-sm-12 col-md-7 col-lg-7" src="" alt="project-web">
-        </div>
-
-        <div class="col-sm-12 col-md-7 col-lg-7">
-
-            <h1>Portafolio</h1>
-            <p>
-                proyecto de portafolio
-            </p>
-            <div>
-                <img src="" alt="Portafolio">
-            </div>
-        </div>
+    <h1>Proyecto.</h1>
+    <div class="colg lg 2">
+        <button type="button" class="btn btn-dark" routerLink="/newproyects" *ngIf="isLogged">
+            Nueva Proyecto
+        </button>
     </div>
+
+    <div class="col-lg-11">
+
+        <div *ngFor="let p of proyecto">
+
+            <p>{{p.nombreP}}</p>
+            <p>{{p.descripcionP}}</p>
+            <p>{{p.imgP}}</p>
+
+            <button *ngIf="isAdmin" class="btn btn-danger" (click)="delete(p.id)">
+                <i class="bi bi-trash-fill"></i> BORRAR</button>
+
+            <button *ngIf="isAdmin" class="btn btn-danger" routerLink="/editproyect/{{p.id}}">
+                <i class="bi bi-trash-fill"></i> Editar</button>
+
+        </div>
+
+    </div>
+
 </div>

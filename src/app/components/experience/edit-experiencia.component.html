@@ -6,11 +6,14 @@
 
                 <div class="form-group">
                     <label for="nombreE">Nombre de Empresa</label>
-                    <input type="text" class="form-control" id="nombreE" [(ngModel)]="expLab.nombreE" required>
+                    <input type="text" class="form-control" id="nombreE" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="expLab.nombreE" required>
+
                 </div>
                 <div class="form-group">
                     <label for="descripcionE">Nombre de Empresa</label>
-                    <input type="text" class="form-control" id="descrpcionE" [(ngModel)]="expLab.descripcionE" required>
+                    <input type="text" class="form-control" id="descripcionE" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="expLab.descripcionE" required>
                 </div>
                 <button class="btn btn-primary">Actualizar</button>
             </form>

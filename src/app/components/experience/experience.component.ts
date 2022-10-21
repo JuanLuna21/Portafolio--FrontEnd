@@ -17,6 +17,8 @@ export class ExperienceComponent implements OnInit {
   constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
 
   isLogged = false;
+  isAdmin = false;
+  roles: string[];
 
   ngOnInit(): void {
     this.cargarExperiencia();
@@ -25,6 +27,19 @@ export class ExperienceComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
+
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
 
@@ -32,19 +47,25 @@ export class ExperienceComponent implements OnInit {
 
     this.sExperiencia.lista().subscribe(data => { this.expe = data })
 
+
+
   }
 
-  delete(id?: number): void {
+
+  delete(id?: number) {
     if (id != undefined) {
       this.sExperiencia.delete(id).subscribe(
-        data => {
+        _data => {
           this.cargarExperiencia();
-        }, err => {
-          alert("No se pudo borrar");
+        }, _err => {
+          alert('no se pudo borrar');
         }
       )
     }
   }
+
+
+
 
 
 }

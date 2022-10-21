@@ -1,62 +1,21 @@
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-
-    </div>
+<h3>Hola</h3>
+<div class="colg lg 2">
+    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+        Nueva Habilidad
+    </button>
 </div>
-
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-
+<div *ngFor="let skills of hysM">
+    <div class="row">
+        <div class="text-center col-sm-4 col-md-4 col-lg-4">
+            <circle-progress [percent]="(skills.porcentajeH)" [radius]="100" [outerStrokeWidth]="16"
+                [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+                [animationDuration]="300">
+            </circle-progress>
+        </div>
     </div>
-</div>
+    <button *ngIf="isAdmin" class="btn btn-danger" (click)="delete(skills.id)">
+        <i class="bi bi-trash-fill"></i> BORRAR</button>
 
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-    </div>
-</div>
-
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-    </div>
-</div>
-
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-
-    </div>
-</div>
-
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-
-    </div>
-</div>
-
-<div class="row">
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
-        </circle-progress>
-
-    </div>
+    <button *ngIf="isAdmin" class="btn btn-danger" routerLink="/nuevoHys{{skills.id}}">
+        <i class="bi bi-trash-fill"></i> Editar</button>
 </div>

@@ -10,7 +10,6 @@ export class EducacionService {
 
   URL = 'https://portafoliojuanluna.herokuapp.com/educacion/';
 
-
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]> {

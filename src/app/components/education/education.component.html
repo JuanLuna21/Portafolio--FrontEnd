@@ -5,6 +5,7 @@
             Agregar Educacion
         </button>
     </div>
+
     <div class="col-lg-11">
 
         <div *ngFor="let e of educacion">
@@ -12,10 +13,10 @@
             <p>{{e.nombreE}}</p>
             <p>{{e.descripcionE}}</p>
 
-            <button ngIf="isLogged" class="btn btn-danger" (click)="delete(e.id)">
+            <button *ngIf="isAdmin" class="btn btn-danger" (click)="delete(e.id)">
                 <i class="bi bi-trash-fill"></i> BORRAR</button>
 
-            <button ngIf="isLogged" class="btn btn-danger" routerLink="/editeducacion/{{e.id}}">
+            <button *ngIf="isAdmin" class="btn btn-danger" routerLink="/editeducacion/{{e.id}}">
                 <i class="bi bi-trash-fill"></i> Editar</button>
         </div>
 

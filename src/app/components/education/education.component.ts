@@ -14,15 +14,29 @@ export class EducationComponent implements OnInit {
 
   constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
   isLogged = false;
+  isAdmin = false;
+  roles: string[];
 
 
   ngOnInit(): void {
-    this.cargarEducacion();
+    this.educacionS.lista()
+      .subscribe(data => {
+        this.educacion = data;
+      })
+
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
+
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
+
   }
 
   cargarEducacion(): void {
