@@ -10,18 +10,26 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 })
 export class NewProyectsComponent implements OnInit {
 
+  id: number = 0;
   nombreP: string = '';
   descripcionP: string = '';
   imgP: string = "";
+  base="";
 
-
+  proyectos: Proyecto = new Proyecto(0, "", "", "");
   constructor(private sProyecto: ProyectoService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  obtener(e: any) {
+    console.log(e);
+    this.base = e[0].base64;
+  }
+
   onCreate(): void {
-    const proyecto = new Proyecto(this.nombreP, this.descripcionP, this.imgP);
+    this.imgP=this.base;
+    const proyecto = new Proyecto(this.id, this.nombreP, this.descripcionP, this.imgP);
     this.sProyecto.save(proyecto).subscribe(
       data => {
         alert("Proyecto añadido");

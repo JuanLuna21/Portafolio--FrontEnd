@@ -1,13 +1,4 @@
 .logoAp {
-    width: 150px;
-}
-
-img {
-    width: 50px;
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    width: 200px;
+    height: 150px;
 }

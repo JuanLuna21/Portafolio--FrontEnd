@@ -38,7 +38,7 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  cargarEducacion(): void {
+  cargarProyecto(): void {
 
     this.proyectoS.lista().subscribe(
       data => {
@@ -51,7 +51,7 @@ export class ProjectsComponent implements OnInit {
     if (id != undefined) {
       this.proyectoS.delete(id).subscribe(
         data => {
-          this.cargarEducacion();
+          this.cargarProyecto();
         }, err => {
           alert("No se eliminó");
         }

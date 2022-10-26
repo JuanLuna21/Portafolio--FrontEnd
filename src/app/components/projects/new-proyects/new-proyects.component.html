@@ -14,8 +14,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="imgP">Imagen</label>
-                    <input type="text" class="form-control" id="imgP" [(ngModel)]="imgP" required name="imgP">
+                    <label for="imgP">Img:</label>
+                    <input [(ngModel)]="proyectos.imgP" name="imgP" type="file" alife-file-to-base64
+                        (onFileChanged)="obtener($event)" />
                 </div>
 
                 <button class=" btn btn-primary">Agregar Proyecto</button>

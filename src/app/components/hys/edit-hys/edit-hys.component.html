@@ -4,7 +4,7 @@
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreH">Nombre de la Habilidad</label>
+                    <label for="nombreH">Nombre de la Tecnologia</label>
                     <input type="text" class="form-control" id="nombreH" [(ngModel)]="hysM.nombreH" required
                         name="nombreH">
                 </div>
@@ -13,7 +13,7 @@
                     <input type="text" class="form-control" id="descripcionH" [(ngModel)]="hysM.descripcionH" required
                         name="descripcionH">
                 </div>
-                <button class="btn btn-primary" click="onUpdate()">Editar Habilidad</button>
+                <button class="btn btn-primary" click="onUpdate()">Editar Tecnologia</button>
             </form>
         </div>
     </div>

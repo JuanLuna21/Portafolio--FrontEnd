@@ -10,12 +10,28 @@ import { person } from '../model/person.model';
 export class PersonService {
 
   url = 'https://portafoliojuanluna.herokuapp.com/personas';
-
+  URL = 'http://localhost:8080/personas';
 
   constructor(private http: HttpClient) { }
-
-  public getPersona() {
+  // traer una lista de personas
+  getPersona() {
     return this.http.get<person[]>(this.url + '/traer');
+  }
+  // crear una persona
+  createPersona(persona: person) {
+    return this.http.post<person>(this.url + '/crear', persona);
+  }
+  // traer una sola persona (para editar por ejemplo)
+  getPersonaId(id: number) {
+    return this.http.get<person>(this.url + "/" + id);
+  }
+  // editar persona
+  updatePersona(persona: person) {
+    return this.http.put<person>(this.url + "/editar/" + persona.id, persona);
+  }
+  // borrar persona
+  deletePersona(persona: person) {
+    return this.http.delete<person>(this.url + "/borrar/" + persona.id);
   }
 
 }

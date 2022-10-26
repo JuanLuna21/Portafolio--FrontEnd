@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  constructor(private tokenService: TokenService, private router: Router) { };
 
-  constructor() { }
+  islogged = false;
+  islogginFail = false;
+  roles: string[] = [];
 
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.islogged = true;
+      this.islogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
-
 }
+
+

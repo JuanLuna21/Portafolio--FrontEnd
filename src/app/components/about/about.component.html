@@ -1,17 +1,65 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src="../../../assets/img/pictureprofile.png" alt="profilePicture" class="img-fluid" id="img-profile">
+<section id="about" class="about">
+
+    <div class="container">
+
+        <div class="row no-gutters">
+
+            <button class="btn btn-secondary" (click)="Nuevo()">Agregar</button>
+            <h3>Desarollador / Estudiante</h3>
+            <p>
+                Estudiante de la Universidad de la Provincia de Buenos Aires.
+            </p>
+            <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="bi bi-emoji-smile"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Tecnologia</strong> Amante de la tecnologia, en constante aprendizaje.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="bi bi-journal-richtext"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Trabajo en Equipo</strong> Me gusta mucho trabajar en equipo, como también
+                            solitario.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="bi bi-clock"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Muy Atento</strong> Me gusta escuchar todo el tiempo, y aprender de ello.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                    <div class="count-box">
+                        <i class="bi bi-award"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Actualmente trabajando en Proyectos</strong> Trabjando en Aplicaciones y
+                            Hobbies propios, como</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div *ngFor="let p of person" class="col-xs-12  col-sm-2 col-md-2 col-lg-2">
-        <p class="nameprofile">{{p.nombre}} {{p.apellido}}</p>
-        <p>Full Stack Developer Jr</p>
-    </div>
-    <div class="col-xs-12  col-sm-2 col-md-2 col-lg-2">
-        <span>
-            <h1>About me:</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vero voluptatibus porro ullam, voluptas fuga
-                atque necessitatibus nulla accusamus rem sed voluptate dolor perspiciatis voluptates optio obcaecati!
-                Velit, sunt illo!</p>
-        </span>
-    </div>
+</section>
+<div class="soloNi" *ngFor="let persona of person">
+    <picture>
+        <img src="{{persona.img}}" alt="ImagenPerfil" accept="image/*">
+    </picture>
+    <h1> {{persona.nombre}} </h1>
+    <h1> {{persona.apellido}} </h1>
+    <h1> {{persona.titulo}} </h1>
+    <h1> {{persona.hobbie}} </h1>
+    <button (click)="Delete(persona)" class="btn btn borrar">Eliminar</button>
+    <button class="btn btn-primary" (click)="Editar(persona)">Editar</button>
 </div>

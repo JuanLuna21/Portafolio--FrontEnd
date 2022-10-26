@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class SExperienciaService {
   expURL = 'https://portafoliojuanluna.herokuapp.com/explab/'
-
+  expUrl = 'http://localhost:8080/explab/';
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]> {

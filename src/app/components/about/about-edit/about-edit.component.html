@@ -1,0 +1,44 @@
+<div class="container text-center d-flex justify-content-center">
+    <div class="row">
+        <h2>Editar</h2>
+        <div class="col">
+            <form action="">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Nombres:</label>
+                        <input [(ngModel)]="persona.nombre" name="nombre" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Apellidos:</label>
+                        <input [(ngModel)]="persona.apellido" name="apellido" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Titulo:</label>
+                        <input [(ngModel)]="persona.titulo" name="titulo" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">Hobbie:</label>
+                        <input [(ngModel)]="persona.hobbie" name="hobbie" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="">dale beto</label>
+                        <input type="file" accept="image/*" [(ngModel)]="persona.img" alife-file-to-base64
+                            (onFileChanged)="obtener($event)" name="img" class="form-control">
+                    </div>
+                    <span style="margin: 10px;">
+                        <button (click)="Actualizar(persona)" class="btn btn-primary" routerLink="/">Actualizar</button>
+                        <button (click)="Cancel()" class="btn btn-secondary">Cancelar</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

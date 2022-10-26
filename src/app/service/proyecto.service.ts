@@ -10,7 +10,7 @@ import { Proyecto } from "../model/proyecto";
 export class ProyectoService {
 
     URL = 'https://portafoliojuanluna.herokuapp.com/proyecto/';
-
+    url = 'http://localhost:8080/proyecto/';
     constructor(private httpClient: HttpClient) { }
 
     public lista(): Observable<Proyecto[]> {
@@ -18,7 +18,7 @@ export class ProyectoService {
     }
 
     public detail(id: number): Observable<Proyecto> {
-        return this.httpClient.get<Proyecto>(this.URL + `detail/${id}`);
+        return this.httpClient.get<Proyecto>(this.URL + `details/${id}`);
     }
 
     public save(proyecto: Proyecto): Observable<any> {

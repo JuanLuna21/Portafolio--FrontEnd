@@ -1,15 +1,38 @@
-<div class="row">
-    <h1>Experiencia Laboral.</h1>
-    <div class="colg lg 2">
+<section class="intro">
+    <div class=" colg lg 2">
+        <h1 class="p-3 mb-2 bg-blue text-white">Experiencia Laboral.</h1>
         <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
             Nueva Experiencia
         </button>
     </div>
-    <div class="col-lg-11">
-        <div *ngFor="let Experiencia of expe">
-            <p>{{Experiencia.nombreE}}</p>
-            <p>{{Experiencia.descripcionE}}</p>
-            <button *ngIf="isAdmin" routerLink="/editexp/{{Experiencia.id}}">Editar</button>
-            <button *ngIf="isAdmin" (click)="delete(Experiencia.id)">Borrar</button>
+    <div class="gradient-custom-2 h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table *ngFor="let Experiencia of expe" class="table table-dark table-bordered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>{{Experiencia.nombreE}}</th>
+                                        <td>{{Experiencia.nombreE}}</td>
+                                    </tr>
+                                </tbody>
+                                <button class="btn btn-info" *ngIf="isAdmin"
+                                    routerLink="/editexp/{{Experiencia.id}}">Editar</button>
+                                <button class="btn btn-info" *ngIf="isAdmin"
+                                    (click)="delete(Experiencia.id)">Borrar</button>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</section>

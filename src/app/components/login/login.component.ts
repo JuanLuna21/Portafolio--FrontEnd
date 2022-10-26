@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
       this.islogginFail = true;
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
+      console.log(this.tokenService.getToken());
+
     })
 
   }

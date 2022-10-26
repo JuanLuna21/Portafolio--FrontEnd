@@ -12,6 +12,7 @@ export class EditProyectComponent implements OnInit {
 
 
   proyectoM: Proyecto = null;
+  proyecto: Proyecto = new Proyecto(0, "", "", "");
 
   constructor(private proyectoS: ProyectoService, private activatedRouter: ActivatedRoute, private router: Router) { }
 
@@ -27,6 +28,12 @@ export class EditProyectComponent implements OnInit {
       }
     )
 
+  }
+
+  obtener(e: any) {
+    this.proyectoM.imgP = e[0].base64;
+    console.log(this.proyectoM.imgP);
+    console.log(e);
   }
 
   onUpdate(): void {

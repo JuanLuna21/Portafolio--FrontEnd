@@ -10,7 +10,9 @@ import { JwtDto } from '../model/jwt-dto';
 })
 export class AuthService {
 
+  authUrl = 'http://localhost:8080/auth/';
   authURL = 'https://portafoliojuanluna.herokuapp.com/auth/';
+
   constructor(private HttpClient: HttpClient) { }
 
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {

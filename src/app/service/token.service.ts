@@ -27,7 +27,7 @@ export class TokenService {
     window.sessionStorage.setItem(USERNAME_KEY, userName);
   }
 
-  public getUserName(): string {
+  public getUserName(): any {
     return sessionStorage.getItem(USERNAME_KEY);
   }
 

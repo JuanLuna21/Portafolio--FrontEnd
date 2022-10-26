@@ -1,25 +1,38 @@
-<div class="row">
-    <h1>Educacion</h1>
-    <div class="colg lg 2">
+<section class="intro">
+    <div class=" colg lg 2">
+        <h1 class="p-3 mb-2 bg-blue text-white">Educacion.</h1>
         <button type="button" class="btn btn-dark" routerLink="/nuevaeducacion" *ngIf="isLogged">
-            Agregar Educacion
+            Nueva Educacion
         </button>
     </div>
-
-    <div class="col-lg-11">
-
-        <div *ngFor="let e of educacion">
-
-            <p>{{e.nombreE}}</p>
-            <p>{{e.descripcionE}}</p>
-
-            <button *ngIf="isAdmin" class="btn btn-danger" (click)="delete(e.id)">
-                <i class="bi bi-trash-fill"></i> BORRAR</button>
-
-            <button *ngIf="isAdmin" class="btn btn-danger" routerLink="/editeducacion/{{e.id}}">
-                <i class="bi bi-trash-fill"></i> Editar</button>
+    <div class="gradient-custom-2 h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table *ngFor="let educacion of educacion" class="table table-dark table-bordered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>{{educacion.nombreE}}</th>
+                                        <td>{{educacion.descripcionE}}</td>
+                                    </tr>
+                                </tbody>
+                                <button class="btn btn-info" *ngIf="isAdmin"
+                                    routerLink="/editeducacion/{{educacion.id}}">Editar</button>
+                                <button class="btn btn-info" *ngIf="isAdmin"
+                                    (click)="delete(educacion.id)">Borrar</button>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
-</div>
+</section>

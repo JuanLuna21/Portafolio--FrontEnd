@@ -4,7 +4,7 @@
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreH">Nombre de institucion</label>
+                    <label for="nombreH">Nombre de Tecnologia</label>
                     <input type="text" class="form-control" id="nombreH" [(ngModel)]="nombreH" required name="nombreH">
                 </div>
                 <div class="form-group">
@@ -12,7 +12,12 @@
                     <input type="text" class="form-control" id="descripcionH" [(ngModel)]="descripcionH" required
                         name="descripcionH">
                 </div>
-                <button class="btn btn-primary">Agregar Educacion</button>
+                <div class="form-group">
+                    <label for="descripcionH">Descripcion</label>
+                    <input type="number" class="form-control" id="porcentajeH" [(ngModel)]="porcentajeH" required
+                        name="porcentajeH">
+                </div>
+                <button class="btn btn-primary">Agregar Tecnologia</button>
             </form>
         </div>
     </div>

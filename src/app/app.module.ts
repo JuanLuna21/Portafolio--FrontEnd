@@ -36,6 +36,9 @@ import { NuevoHysComponent } from './components/hys/nuevo-hys/nuevo-hys.componen
 import { EditHysComponent } from './components/hys/edit-hys/edit-hys.component';
 import { NewProyectsComponent } from './components/projects/new-proyects/new-proyects.component';
 import { EditProyectComponent } from './components/projects/edit-proyect/edit-proyect.component';
+import { AboutEditComponent } from './components/about/about-edit/about-edit.component';
+import { AboutNewComponent } from './components/about/about-new/about-new.component';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 
 @NgModule({
@@ -61,12 +64,15 @@ import { EditProyectComponent } from './components/projects/edit-proyect/edit-pr
     EditHysComponent,
     NewProyectsComponent,
     EditProyectComponent,
+    AboutEditComponent,
+    AboutNewComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    AlifeFileToBase64Module,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule
   ],

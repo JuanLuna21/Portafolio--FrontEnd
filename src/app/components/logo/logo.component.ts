@@ -27,6 +27,7 @@ export class LogoComponent implements OnInit {
   onLogout(): void {
     this.TokenService.logOut();
     window.location.reload();
+    this.router.navigate(['/login']);
   }
 
   login() {

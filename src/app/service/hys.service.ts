@@ -9,6 +9,7 @@ import { Hys } from "../model/hys";
 export class HysS {
 
     URL = 'https://portafoliojuanluna.herokuapp.com/hys/';
+    url = 'http://localhost:8080/hys/';
 
     constructor(private httpClient: HttpClient) { }
 
