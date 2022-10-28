@@ -1,10 +1,3 @@
-/**
-* Template Name: Lonely - v4.9.1
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -391,9 +384,7 @@ section {
     padding: 60px 0;
 }
 
-.section-bg {
-    background: linear-gradient(180deg, #f2f6f9 0%, #fff 100%);
-}
+
 
 .section-title {
     padding-bottom: 30px;
@@ -408,20 +399,6 @@ section {
     color: #345676;
 }
 
-.section-title h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #d43076;
-    bottom: 0;
-    left: 0;
-}
-
-.section-title p {
-    margin-bottom: 0;
-}
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -860,70 +837,6 @@ section {
     bottom: calc(50% - 50px);
 }
 
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
-.portfolio-details {
-    padding-top: 40px;
-}
-
-.portfolio-details .portfolio-details-slider img {
-    width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    opacity: 1;
-    border: 1px solid #d43076;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #d43076;
-}
-
-.portfolio-details .portfolio-info {
-    padding: 30px;
-    box-shadow: 0px 0 30px rgba(44, 73, 100, 0.08);
-}
-
-.portfolio-details .portfolio-info h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.portfolio-details .portfolio-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-    margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-    padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-    padding: 0;
-}
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -944,7 +857,7 @@ section {
     margin: -40px 0 0 40px;
     position: relative;
     z-index: 2;
-    border: 6px solid #fff;
+    border: 6px solid rgb(126, 88, 56);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -1168,7 +1081,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #fff;
+    background-color: #3c6387;
     padding: 24px 0;
     font-size: 14px;
     box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 0.12);

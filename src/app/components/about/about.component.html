@@ -53,9 +53,12 @@
     </div>
 </section>
 <div class="soloNi" *ngFor="let persona of person">
-    <picture>
-        <img src="{{persona.img}}" alt="ImagenPerfil" accept="image/*">
-    </picture>
+    <div>
+        <picture>
+            <img src="{{persona.img}}" alt="ImagenPerfil" accept="image/*">
+        </picture>
+
+    </div>
     <h1> {{persona.nombre}} </h1>
     <h1> {{persona.apellido}} </h1>
     <h1> {{persona.titulo}} </h1>

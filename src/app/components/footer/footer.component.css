@@ -1,6 +1,9 @@
 .row {
+    display: flex;
+    justify-content: center;
     text-align: center;
     background-color: #a1b5cb;
+
 }
 
 .footer {

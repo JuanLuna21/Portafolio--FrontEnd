@@ -18,7 +18,7 @@ export class HysS {
     }
 
     public detail(id: number): Observable<Hys> {
-        return this.httpClient.get<Hys>(this.URL + `detail/${id}`);
+        return this.httpClient.get<Hys>(this.URL + `details/${id}`);
     }
 
     public save(hys: Hys): Observable<any> {
