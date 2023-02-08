@@ -63,6 +63,6 @@
     <h1> {{persona.apellido}} </h1>
     <h1> {{persona.titulo}} </h1>
     <h1> {{persona.hobbie}} </h1>
-    <button (click)="Delete(persona)" class="btn btn borrar">Eliminar</button>
-    <button class="btn btn-primary" (click)="Editar(persona)">Editar</button>
+    <button (click)="Delete(persona)" class="btn btn borrar" *ngIf="isAdmin">Eliminar</button>
+    <button class="btn btn-primary" (click)="Editar(persona)" *ngIf="isAdmin">Editar</button>
 </div>

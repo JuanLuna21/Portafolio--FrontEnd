@@ -8,7 +8,8 @@ import { Hys } from "../model/hys";
 })
 export class HysS {
 
-    URL = 'https://portafoliojuanluna.herokuapp.com/hys/';
+    URL = ' https://portafolio-backend-production-789a.up.railway.app/hys/';
+
     url = 'http://localhost:8080/hys/';
 
     constructor(private httpClient: HttpClient) { }

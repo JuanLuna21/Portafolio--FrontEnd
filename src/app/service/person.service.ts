@@ -9,7 +9,8 @@ import { person } from '../model/person.model';
 })
 export class PersonService {
 
-  url = 'https://portafoliojuanluna.herokuapp.com/personas';
+  url = 'https://portafolio-backend-production-789a.up.railway.app/personas';
+
   URL = 'http://localhost:8080/personas';
 
   constructor(private http: HttpClient) { }
